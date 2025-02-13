@@ -12,6 +12,7 @@ public protocol GithubRepository {
     func loadUsers(limit: Int, offset: Int) async throws
     func loadUserDetail(username: String) async throws
     func getUsers() -> AnyPublisher<[String], Never>
+    func getUserDetail(remoteId: Int) -> AnyPublisher<String, Never>
 }
 
 struct DefaultGithubRepository: GithubRepository {
@@ -21,18 +22,26 @@ struct DefaultGithubRepository: GithubRepository {
         self.githubRemoteDataSource = githubRemoteDataSource
     }
 
+
     func loadUsers(limit: Int, offset: Int) async throws {
+        // Fetch List User from remote first
         let users = try await githubRemoteDataSource.loadUsers(limit: limit, offset: offset)
-        debugPrint(users)
+        // Then upsert it into Database
     }
 
     func loadUserDetail(username: String) async throws {
+        // Fetch User detail from remote
         let userDetail = try await githubRemoteDataSource.loadUserDetail(username: username)
-        debugPrint(userDetail)
+        // Then upsert it into Database
     }
 
     func getUsers() -> AnyPublisher<[String], Never> {
         Just([])
+            .eraseToAnyPublisher()
+    }
+
+    func getUserDetail(remoteId: Int) -> AnyPublisher<String, Never> {
+        Just("")
             .eraseToAnyPublisher()
     }
 }

@@ -10,7 +10,7 @@ final class UserDetailRequest: JSONDecodableRequest<Network.UserDetail> {
         super.init(
             httpMethod: .GET,
             baseEndpoint: .github,
-            percentEncodedPath: "/users/\(username)"
+            path: "/users/\(username)"
         )
     }
 }

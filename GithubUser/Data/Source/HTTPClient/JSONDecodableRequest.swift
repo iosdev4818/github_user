@@ -35,7 +35,7 @@ class JSONDecodableRequest<ResponseModelType: Decodable>: Request {
         return try decodeResponseBody(output.data, requestPath: requestPath)
     }
 
-    func decodeResponseBody<ResponseBodyType>(_ data: Data, requestPath: String?) throws -> ResponseBodyType where ResponseBodyType: Decodable {
+    private func decodeResponseBody<ResponseBodyType>(_ data: Data, requestPath: String?) throws -> ResponseBodyType where ResponseBodyType: Decodable {
         do {
             return try JSONDecoder().decode(ResponseBodyType.self, from: data)
         } catch {

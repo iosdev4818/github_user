@@ -17,7 +17,6 @@ public protocol Request {
     var percentEncodedPath: String? { get }
     var queryParameters: [URLQueryItem]? { get }
     var body: RequestBody? { get }
-    var extraHeaders: [String: String]? { get }
     var timeoutInterval: TimeInterval? { get }
     var cachePolicy: URLRequest.CachePolicy? { get }
 
@@ -29,7 +28,6 @@ extension Request {
     var percentEncodedPath: String? { nil }
     var queryParameters: [URLQueryItem]? { nil }
     var body: RequestBody? { nil }
-    var extraHeaders: [String: String]? { nil }
     var timeoutInterval: TimeInterval? { nil }
     var cachePolicy: URLRequest.CachePolicy? { nil }
 }
@@ -72,11 +70,6 @@ extension Request {
         if let body = self.body {
             urlRequest.setValue(body.contentType, forHTTPHeaderField: "Content-Type")
             urlRequest.httpBody = try body.encode()
-        }
-        if let headers = extraHeaders {
-            for (key, value) in headers {
-                urlRequest.setValue(value, forHTTPHeaderField: key)
-            }
         }
         if let timeoutInterval = timeoutInterval {
             urlRequest.timeoutInterval = timeoutInterval
