@@ -44,7 +44,7 @@ struct DefaultGithubRepository: GithubRepository {
     func getUsers() -> AnyPublisher<[UserModel], Never> {
         userDao.getUsers(in: dataBase.viewContext)
             .map {
-                userTranslator.invoke($0)
+                userTranslator.invoke(users: $0)
             }
             .eraseToAnyPublisher()
     }
@@ -52,7 +52,7 @@ struct DefaultGithubRepository: GithubRepository {
     func getUserDetail(username: String) -> AnyPublisher<UserModel?, Never> {
         userDao.getUserDetail(by: username, in: dataBase.viewContext)
             .map {
-                userTranslator.invoke($0)
+                userTranslator.invoke(user: $0)
             }
             .eraseToAnyPublisher()
     }

@@ -44,13 +44,6 @@
 			remoteGlobalIDString = DC91C8DC2D5CCCB40036AC14;
 			remoteInfo = Domain;
 		};
-		DC91C8EA2D5CCCB40036AC14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC91C8032D5CCB130036AC14;
-			remoteInfo = GithubUser;
-		};
 		DC91C8F02D5CCCB40036AC14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
@@ -64,13 +57,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = DC91C9002D5CCCF10036AC14;
 			remoteInfo = Data;
-		};
-		DC91C90E2D5CCCF10036AC14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC91C8032D5CCB130036AC14;
-			remoteInfo = GithubUser;
 		};
 		DC91C9142D5CCCF10036AC14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -86,13 +72,6 @@
 			remoteGlobalIDString = DC91C9232D5CCE430036AC14;
 			remoteInfo = APINetwork;
 		};
-		DC91C9312D5CCE430036AC14 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC91C8032D5CCB130036AC14;
-			remoteInfo = GithubUser;
-		};
 		DC91C9372D5CCE430036AC14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
@@ -106,6 +85,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = DC91C9002D5CCCF10036AC14;
 			remoteInfo = Data;
+		};
+		DCDE1F392D5F42CE000EDE23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC91C8DC2D5CCCB40036AC14;
+			remoteInfo = Domain;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -464,7 +450,6 @@
 			);
 			dependencies = (
 				DC91C8E92D5CCCB40036AC14 /* PBXTargetDependency */,
-				DC91C8EB2D5CCCB40036AC14 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C8EC2D5CCCB40036AC14 /* DomainTests */,
@@ -488,6 +473,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DCDE1F3A2D5F42CE000EDE23 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C9022D5CCCF10036AC14 /* Data */,
@@ -512,7 +498,6 @@
 			);
 			dependencies = (
 				DC91C90D2D5CCCF10036AC14 /* PBXTargetDependency */,
-				DC91C90F2D5CCCF10036AC14 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C9102D5CCCF10036AC14 /* DataTests */,
@@ -561,7 +546,6 @@
 			);
 			dependencies = (
 				DC91C9302D5CCE430036AC14 /* PBXTargetDependency */,
-				DC91C9322D5CCE430036AC14 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C9332D5CCE430036AC14 /* APINetworkTests */,
@@ -802,11 +786,6 @@
 			target = DC91C8DC2D5CCCB40036AC14 /* Domain */;
 			targetProxy = DC91C8E82D5CCCB40036AC14 /* PBXContainerItemProxy */;
 		};
-		DC91C8EB2D5CCCB40036AC14 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC91C8032D5CCB130036AC14 /* GithubUser */;
-			targetProxy = DC91C8EA2D5CCCB40036AC14 /* PBXContainerItemProxy */;
-		};
 		DC91C8F12D5CCCB40036AC14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC91C8DC2D5CCCB40036AC14 /* Domain */;
@@ -816,11 +795,6 @@
 			isa = PBXTargetDependency;
 			target = DC91C9002D5CCCF10036AC14 /* Data */;
 			targetProxy = DC91C90C2D5CCCF10036AC14 /* PBXContainerItemProxy */;
-		};
-		DC91C90F2D5CCCF10036AC14 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC91C8032D5CCB130036AC14 /* GithubUser */;
-			targetProxy = DC91C90E2D5CCCF10036AC14 /* PBXContainerItemProxy */;
 		};
 		DC91C9152D5CCCF10036AC14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -832,11 +806,6 @@
 			target = DC91C9232D5CCE430036AC14 /* APINetwork */;
 			targetProxy = DC91C92F2D5CCE430036AC14 /* PBXContainerItemProxy */;
 		};
-		DC91C9322D5CCE430036AC14 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DC91C8032D5CCB130036AC14 /* GithubUser */;
-			targetProxy = DC91C9312D5CCE430036AC14 /* PBXContainerItemProxy */;
-		};
 		DC91C9382D5CCE430036AC14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC91C9232D5CCE430036AC14 /* APINetwork */;
@@ -846,6 +815,11 @@
 			isa = PBXTargetDependency;
 			target = DC91C9002D5CCCF10036AC14 /* Data */;
 			targetProxy = DC91C9772D5CE3BA0036AC14 /* PBXContainerItemProxy */;
+		};
+		DCDE1F3A2D5F42CE000EDE23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC91C8DC2D5CCCB40036AC14 /* Domain */;
+			targetProxy = DCDE1F392D5F42CE000EDE23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

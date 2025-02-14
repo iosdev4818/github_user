@@ -12,16 +12,10 @@ protocol CoreDatabase {
     var viewContext: NSManagedObjectContext { get }
     var currentBackgroundContext: NSManagedObjectContext { get }
     func saveContext()
+    func clearData()
 }
 
 final class DefaultCoreDatabase: CoreDatabase {
-
-    // MARK: - Constants
-
-    struct Constants {
-        static let managedObjectModelDatabaseExtension = "momd"
-    }
-
     // MARK: - Properties
 
     let persistentContainer: NSPersistentContainer
@@ -39,13 +33,7 @@ final class DefaultCoreDatabase: CoreDatabase {
 
     // MARK: - Initializer
     init(databaseName: String = "Github") {
-        let bundle = Bundle(for: type(of: self))
-        guard let modelUrl = bundle.url(forResource: databaseName, withExtension: Constants.managedObjectModelDatabaseExtension) else {
-            fatalError("[CoreDatabase] Failed to locate \(databaseName) managed object model definition")
-        }
-        guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelUrl) else {
-            fatalError("[CoreDatabase] Failed to initialize \(databaseName) managed object model from URL: \(modelUrl)")
-        }
+        let managedObjectModel = CoreDatabaseModel(name: databaseName).managedObjectModel
 
         persistentContainer = NSPersistentContainer(name: databaseName, managedObjectModel: managedObjectModel)
 
@@ -76,6 +64,67 @@ final class DefaultCoreDatabase: CoreDatabase {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
+
+    func clearData() {
+        currentBackgroundContext.performReset()
+        viewContext.performReset()
+        let persistentStoreCoordinator = persistentContainer.persistentStoreCoordinator
+        let storeURLs = persistentStoreCoordinator.persistentStores.compactMap { $0.url }
+
+        persistentStoreCoordinator.persistentStores.forEach {
+            do {
+                try persistentStoreCoordinator.remove($0)
+            } catch {
+            }
+        }
+
+        deletePersistentStoreFiles(at: storeURLs)
+    }
 }
 
+private extension DefaultCoreDatabase {
+    private func deletePersistentStoreFiles(at urls: [URL]) {
+        let fileManager = FileManager.default
+        for url in urls {
+            do {
+                if fileManager.fileExists(atPath: url.path) {
+                    try fileManager.removeItem(at: url)
+                    print("Deleted store file at: \(url)")
+                }
+            } catch {
+                print("Failed to delete store file at \(url): \(error)")
+            }
+        }
+    }
+}
 
+class CoreDatabaseModel {
+    // MARK: - Constants
+    struct Constants {
+        static let managedObjectModelDatabaseExtension = "momd"
+    }
+
+    private let name: String
+
+    private lazy var bundle: Bundle = {
+        Bundle(for: type(of: self))
+    }()
+
+    init(name: String) {
+        self.name = name
+    }
+
+    var modelUrl: URL {
+        guard let modelUrl = bundle.url(forResource: name, withExtension: Constants.managedObjectModelDatabaseExtension) else {
+            fatalError("[CoreDatabaseModel] Failed to locate \(name) managed object model definition")
+        }
+        return modelUrl
+    }
+
+    var managedObjectModel: NSManagedObjectModel {
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelUrl) else {
+            fatalError("[CoreDatabaseModel] Failed to initialize \(name) managed object model from URL: \(modelUrl)")
+        }
+        return managedObjectModel
+    }
+}

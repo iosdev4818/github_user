@@ -8,29 +8,43 @@
 import XCTest
 @testable import Data
 
-final class GithubRepositoryTests: XCTestCase {
+final class GithubRepositoryTests: CoreDatabaseBaseTest {
+    // MARK: - loadUser
+    func testLoadUser() async throws {
+        let expectedUsers = [
+            Network.UserFixture.user1,
+            Network.UserFixture.user2
+        ]
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let remoteDatasourceExpectation = self.expectation(description: "Remote Datasource")
+        let remoteDatasource = GithubRemoteDataSourceSpy()
+        remoteDatasource.loadUsersLimitOffsetClosure = { limit, offset in
+            XCTAssertEqual(limit, 20)
+            XCTAssertEqual(offset, 20)
+            remoteDatasourceExpectation.fulfill()
+            return expectedUsers
         }
+
+        let userDaoExpectation = self.expectation(description: "User Dao")
+        let userDao = UserDaoSpy()
+        userDao.upsertUsersUsersInClosure = { actualUsers, _ in
+            XCTAssertEqual(actualUsers, expectedUsers)
+            userDaoExpectation.fulfill()
+        }
+
+        let sut = DefaultGithubRepository(
+            githubRemoteDataSource: remoteDatasource,
+            userDao: userDao,
+            dataBase: database,
+            userTranslator: UserTranslatorSpy()
+        )
+
+        try await sut.loadUsers(limit: 20, offset: 20)
+
+        await fulfillment(of: [remoteDatasourceExpectation, userDaoExpectation], timeout: 1.0)
     }
 
+    func testLoadUserDetail() async throws {
+        
+    }
 }
