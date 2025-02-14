@@ -25,9 +25,9 @@ struct UserDetailRowView: View {
                         .lineLimit(2)
                         .bold()
 
+                    Divider()
+
                     if !location.isEmpty {
-                        Divider()
-                        
                         HStack {
                             Image(systemName: "mappin.and.ellipse")
                             Text(location)
