@@ -47,7 +47,7 @@ final class UserDetailViewModel: ObservableObject {
         getUserDetailPublisher = nil
     }
 
-    func fetchUserDetail() {
+    private func fetchUserDetail() {
         Task {
             try await loadUserDetail.invoke(username)
         }

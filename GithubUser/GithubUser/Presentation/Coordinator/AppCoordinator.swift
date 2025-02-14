@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+import Spyable
 
+@Spyable(behindPreprocessorFlag: "DEBUG || TESTING")
 protocol GithubUserListCoordinator {
     func navigateToDetail(username: String)
 }
