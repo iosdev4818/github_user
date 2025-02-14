@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  GithubUser
+
+  Created by Bao Nguyen on 14/2/25.
+  
+*/
+
+"github_users" = "Github Users";
+"user_details" = "User Details";
+"follower" = "Follower";
+"following" = "Following";
+"blog" = "Blog";

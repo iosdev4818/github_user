@@ -6,19 +6,38 @@
 //
 
 import SwiftUI
-import Data
+import Domain
 
 struct GithubUserListView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onAppear {
-                Task {
-                    try await DependenciesHolder.instance.dependencies.repositoryDependencies.githubRepository.loadUsers(limit: 20, offset: 0)
-                }
-            }
-    }
-}
+    @StateObject var viewModel: GithubUserListViewModel
 
-#Preview {
-    GithubUserListView()
+    var body: some View {
+        List {
+            ForEach(Array(viewModel.users.enumerated()), id: \.element) { index, user in
+                UserRowView(viewModel: UserRowViewModel(user: user))
+                    .listRowSeparator(.hidden)
+                    .onAppear {
+                        viewModel.loadUsersIfNeeded(at: index)
+                    }
+                    .onTapGesture {
+                        viewModel.didTapUser(user)
+                    }
+            }
+
+            if viewModel.shouldShowLoadMoreView() {
+                LoadMoreCell()
+                    .id(UUID())
+                    .listRowSeparator(.hidden)
+            }
+        }
+        .listStyle(.plain)
+        .onAppear {
+            viewModel.startUpdating()
+        }
+        .onDisappear {
+            viewModel.stopUpdating()
+        }
+        .navigationTitle("Github Users")
+        .navigationBarTitleDisplayMode(.inline)
+    }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC79A0C82D5DEF1A007EEE42 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DC79A0C72D5DEF1A007EEE42 /* Spyable */; };
+		DC79A0E92D5ECED8007EEE42 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = DC79A0E82D5ECED8007EEE42 /* RswiftLibrary */; };
 		DC91C8E72D5CCCB40036AC14 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC91C8DD2D5CCCB40036AC14 /* Domain.framework */; };
 		DC91C8F22D5CCCB40036AC14 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC91C8DD2D5CCCB40036AC14 /* Domain.framework */; };
 		DC91C8F32D5CCCB40036AC14 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC91C8DD2D5CCCB40036AC14 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -222,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC91C9392D5CCE430036AC14 /* APINetwork.framework in Frameworks */,
+				DC79A0E92D5ECED8007EEE42 /* RswiftLibrary in Frameworks */,
 				DC91C9162D5CCCF10036AC14 /* Data.framework in Frameworks */,
 				DC91C8F22D5CCCB40036AC14 /* Domain.framework in Frameworks */,
 			);
@@ -245,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC79A0C82D5DEF1A007EEE42 /* Spyable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +375,7 @@
 			);
 			name = GithubUser;
 			packageProductDependencies = (
+				DC79A0E82D5ECED8007EEE42 /* RswiftLibrary */,
 			);
 			productName = GithubUser;
 			productReference = DC91C8042D5CCB130036AC14 /* GithubUser.app */;
@@ -440,6 +445,7 @@
 			);
 			name = Domain;
 			packageProductDependencies = (
+				DC79A0C72D5DEF1A007EEE42 /* Spyable */,
 			);
 			productName = Domain;
 			productReference = DC91C8DD2D5CCCB40036AC14 /* Domain.framework */;
@@ -623,6 +629,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				DC91C9472D5CCF9F0036AC14 /* XCRemoteSwiftPackageReference "swift-spyable" */,
+				DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DC91C8052D5CCB130036AC14 /* Products */;
@@ -1575,6 +1582,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.8.0;
+			};
+		};
 		DC91C9472D5CCF9F0036AC14 /* XCRemoteSwiftPackageReference "swift-spyable" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Matejkob/swift-spyable";
@@ -1586,6 +1601,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DC79A0C72D5DEF1A007EEE42 /* Spyable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC91C9472D5CCF9F0036AC14 /* XCRemoteSwiftPackageReference "swift-spyable" */;
+			productName = Spyable;
+		};
+		DC79A0E82D5ECED8007EEE42 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
+		};
 		DC91C9482D5CCF9F0036AC14 /* Spyable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC91C9472D5CCF9F0036AC14 /* XCRemoteSwiftPackageReference "swift-spyable" */;
