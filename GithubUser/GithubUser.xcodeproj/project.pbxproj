@@ -366,6 +366,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DC47BE0E2D5EE2C9001F6C50 /* PBXTargetDependency */,
 				DC91C8F12D5CCCB40036AC14 /* PBXTargetDependency */,
 				DC91C9152D5CCCF10036AC14 /* PBXTargetDependency */,
 				DC91C9382D5CCE430036AC14 /* PBXTargetDependency */,
@@ -782,6 +783,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DC47BE0E2D5EE2C9001F6C50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DC47BE0D2D5EE2C9001F6C50 /* RswiftGenerateInternalResources */;
+		};
 		DC91C81B2D5CCB140036AC14 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC91C8032D5CCB130036AC14 /* GithubUser */;
@@ -1601,6 +1606,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DC47BE0D2D5EE2C9001F6C50 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
 		DC79A0C72D5DEF1A007EEE42 /* Spyable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC91C9472D5CCF9F0036AC14 /* XCRemoteSwiftPackageReference "swift-spyable" */;

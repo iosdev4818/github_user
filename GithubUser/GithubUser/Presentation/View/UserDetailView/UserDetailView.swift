@@ -33,6 +33,6 @@ struct UserDetailView: View {
         .onDisappear {
             viewModel.stopUpdating()
         }
-        .navigationTitle("User Details")
+        .navigationTitle(R.string.localizable.user_details())
     }
 }

@@ -37,7 +37,7 @@ struct GithubUserListView: View {
         .onDisappear {
             viewModel.stopUpdating()
         }
-        .navigationTitle("Github Users")
+        .navigationTitle(R.string.localizable.github_users())
         .navigationBarTitleDisplayMode(.inline)
     }
 }

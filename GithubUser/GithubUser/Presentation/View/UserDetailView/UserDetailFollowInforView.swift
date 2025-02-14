@@ -14,9 +14,9 @@ struct UserDetailFollowInforView: View {
     var body: some View {
         HStack {
             Spacer()
-            FollowInforView(follow: follower, title: "Follower", icon: "person.2.fill")
+            FollowInforView(follow: follower, title: R.string.localizable.follower(), icon: "person.2.fill")
             Spacer()
-            FollowInforView(follow: following, title: "Following", icon: "rosette")
+            FollowInforView(follow: following, title: R.string.localizable.following(), icon: "rosette")
             Spacer()
         }
     }
@@ -34,7 +34,7 @@ struct FollowInforView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 30, height: 30)
                 .padding(16)
-                .background(.gray)
+                .background(Color(.systemGray6))
                 .clipShape(Circle())
 
             Text("\(follow)+")

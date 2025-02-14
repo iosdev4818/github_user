@@ -18,12 +18,15 @@ struct UserDetailRowView: View {
                 AsyncImageView(urlString: avatarUrl)
                     .frame(width: 120, height: 120)
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+
                 VStack(alignment: .leading) {
                     Text(displayName)
                         .font(.title2)
                         .lineLimit(2)
                         .bold()
+
                     Divider()
+                    
                     HStack {
                         Image(systemName: "mappin.and.ellipse")
                         Text(location)
