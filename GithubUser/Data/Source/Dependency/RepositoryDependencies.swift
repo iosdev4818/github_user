@@ -5,21 +5,30 @@
 //  Created by Bao Nguyen on 12/2/25.
 //
 
-public protocol RepositoryDependencies {
-    var githubRepository: GithubRepository { get }
-}
+import Domain
 
 final class DefaultRepositoryDependencies: RepositoryDependencies {
     private let remoteDataSourceDependencies: RemoteDataSourceDependencies
+    private let databaseDependencies: DatabaseDependencies
+    private let translatorDependencies: TranslatorDependencies
 
     init(
-        remoteDataSourceDependencies: RemoteDataSourceDependencies
+        remoteDataSourceDependencies: RemoteDataSourceDependencies,
+        databaseDependencies: DatabaseDependencies,
+        translatorDependencies: TranslatorDependencies
     ) {
         self.remoteDataSourceDependencies = remoteDataSourceDependencies
+        self.databaseDependencies = databaseDependencies
+        self.translatorDependencies = translatorDependencies
     }
 
     lazy var githubRepository: GithubRepository = {
-        DefaultGithubRepository(githubRemoteDataSource: remoteDataSourceDependencies.githubRemoteDataSource)
+        DefaultGithubRepository(
+            githubRemoteDataSource: remoteDataSourceDependencies.githubRemoteDataSource,
+            userDao: databaseDependencies.userDao,
+            dataBase: databaseDependencies.coreDatabase,
+            userTranslator: translatorDependencies.userTranslator
+        )
     }()
 }
 
@@ -28,7 +37,9 @@ public final class RepositoryDependenciesFactory {
         DefaultRepositoryDependencies(
             remoteDataSourceDependencies: DefaultRemoteDataSourceDependencies(
                 httpClientDependencies: httpClientDependencies
-            )
+            ),
+            databaseDependencies: DefaultDatabaseDependencies(),
+            translatorDependencies: DefaultTranslatorDependencies()
         )
     }
 }
