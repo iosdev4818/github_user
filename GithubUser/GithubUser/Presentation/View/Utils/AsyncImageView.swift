@@ -23,9 +23,6 @@ struct AsyncImageView: View {
                             .scaledToFill()
                     case .failure:
                         Color.gray
-                            .overlay(
-                                Text("Failed to load")
-                                    .foregroundColor(.white))
                     @unknown default:
                         Color.gray
                 }

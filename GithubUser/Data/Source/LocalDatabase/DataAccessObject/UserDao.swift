@@ -60,7 +60,7 @@ struct DefaultUserDao: UserDao {
             userEntity.username = userDetail.login
             userEntity.avatar = userDetail.avatar_url
             userEntity.htmlUrlString = userDetail.html_url
-            userEntity.location = userDetail.location
+            userEntity.location = userDetail.location ?? ""
             userEntity.followers = Int32(userDetail.followers)
             userEntity.following = Int32(userDetail.following)
         }

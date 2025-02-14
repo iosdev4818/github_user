@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import CoreData
+@testable import Data
 
 class BaseTests: XCTestCase {
     func dataWithName(_ name: String, ofType: String) -> Data? {
@@ -15,4 +17,30 @@ class BaseTests: XCTestCase {
         return try? Data(contentsOf: URL(fileURLWithPath: pathString))
     }
 
+}
+
+class CoreDatabaseBaseTest: BaseTests {
+    var database: CoreDatabase!
+
+    var persistentContainer: NSPersistentContainer {
+        database.persistentContainer
+    }
+
+    var viewContext: NSManagedObjectContext {
+        database.viewContext
+    }
+
+    var currentBackgroundContext: NSManagedObjectContext {
+        database.currentBackgroundContext
+    }
+
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        database = CoreDatabaseSpy()
+    }
+
+    override func tearDownWithError() throws {
+        try super.tearDownWithError()
+        database.clearData()
+    }
 }

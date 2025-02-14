@@ -8,6 +8,12 @@
 import CoreData
 
 extension NSManagedObjectContext {
+    func performReset() {
+        performAndWait {
+            reset()
+        }
+    }
+
     func saveChanges() throws {
         guard let persistentStoreCoordinator = persistentStoreCoordinator, !persistentStoreCoordinator.persistentStores.isEmpty else {
             assertionFailure()

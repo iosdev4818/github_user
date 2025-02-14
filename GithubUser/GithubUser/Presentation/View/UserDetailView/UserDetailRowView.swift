@@ -26,11 +26,13 @@ struct UserDetailRowView: View {
                         .bold()
 
                     Divider()
-                    
-                    HStack {
-                        Image(systemName: "mappin.and.ellipse")
-                        Text(location)
-                            .lineLimit(2)
+
+                    if !location.isEmpty {
+                        HStack {
+                            Image(systemName: "mappin.and.ellipse")
+                            Text(location)
+                                .lineLimit(2)
+                        }
                     }
                 }
             }
