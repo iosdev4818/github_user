@@ -1,5 +1,5 @@
 ## Github User
-Get the list of GitHub users and view user details. The application employs the MVVM pattern combined with Clean Architecture. The presentation layer is implemented using SwiftUI.
+Get the list of GitHub users and view user details. The application employs the MVVM pattern combined with Clean Architecture and SOLID principles. The presentation layer is implemented using SwiftUI.
 
 ### Screenshots
 |   |   |   |
@@ -16,6 +16,7 @@ Get the list of GitHub users and view user details. The application employs the 
 
 ## Installation
 - Open `GithubUser.xcodeproj`
+- Wait for SPM to resolve dependencies
 - Choose `GithubUser` app target. Build and run the application
 
 ## Application Features
