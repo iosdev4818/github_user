@@ -22,20 +22,19 @@ struct AsyncImageView: View {
                             .resizable()
                             .scaledToFill()
                     case .failure:
-                        Color.gray
+                        Color(.systemGray6)
                     @unknown default:
-                        Color.gray
+                        Color(.systemGray6)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .aspectRatio(1, contentMode: .fill)
             .clipped()
         } else {
-            Color.gray
+            Color(.systemGray6)
         }
     }
 }
-
 
 #Preview {
     VStack {

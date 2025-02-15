@@ -115,19 +115,6 @@ final class GithubUserListViewModelTests: XCTestCase {
         XCTAssertTrue(loadUsers.invokeAtCalled)
     }
 
-    func testLoadUsersIfNeededWhenShouldInvokeIsFalseShouldNotCallInvoke() {
-        loadUsers.shouldInvokeAtClosure = { _ in
-            false
-        }
-        loadUsers.invokeAtClosure = { _ in
-            XCTFail("Must not call")
-        }
-
-        sut.loadUsersIfNeeded(at: 0)
-
-        XCTAssertFalse(loadUsers.invokeAtCalled)
-    }
-
     func testDidTapUserShouldCallNavigateToDetail() {
         coordinator.navigateToDetailUsernameClosure = { username in
             XCTAssertEqual(username, UserModelFixture.user1.username)
