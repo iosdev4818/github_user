@@ -49,7 +49,11 @@ final class UserDetailViewModel: ObservableObject {
 
     private func fetchUserDetail() {
         Task {
-            try await loadUserDetail.invoke(username)
+            do {
+                try await loadUserDetail.invoke(username)
+            } catch {
+                debugPrint("[UserDetailViewModel] fetchUserDetail error: \(error)")
+            }
         }
     }
 }

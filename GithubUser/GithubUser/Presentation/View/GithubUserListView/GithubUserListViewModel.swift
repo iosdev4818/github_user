@@ -65,7 +65,11 @@ final class GithubUserListViewModel: ObservableObject {
         }
 
         Task {
-            try await loadUsers.invoke(at: index)
+            do {
+                try await loadUsers.invoke(at: index)
+            } catch {
+                debugPrint("[GithubUserListViewModel] loadUsersIfNeeded error: \(error)")
+            }
         }
     }
 }

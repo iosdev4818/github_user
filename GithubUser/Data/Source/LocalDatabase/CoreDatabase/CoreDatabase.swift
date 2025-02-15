@@ -22,13 +22,13 @@ final class DefaultCoreDatabase: CoreDatabase {
 
     // View context executed on the main queue
     var viewContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
+        persistentContainer.viewContext
     }
 
     // Background context that exists during the app's life
     private let backgroundContext: NSManagedObjectContext
     var currentBackgroundContext: NSManagedObjectContext {
-        return backgroundContext
+        backgroundContext
     }
 
     // MARK: - Initializer
@@ -38,7 +38,7 @@ final class DefaultCoreDatabase: CoreDatabase {
         persistentContainer = NSPersistentContainer(name: databaseName, managedObjectModel: managedObjectModel)
 
         // Load the persistent stores
-        persistentContainer.loadPersistentStores { (storeDescription, error) in
+        persistentContainer.loadPersistentStores { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }

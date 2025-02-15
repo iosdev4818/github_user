@@ -44,7 +44,6 @@ final class DefaultUseCaseDependencies: UseCaseDependencies {
     }()
 }
 
-
 public final class UseCaseDependenciesFactory {
     public static func make(repositoryDependencies: RepositoryDependencies) -> UseCaseDependencies {
         DefaultUseCaseDependencies(

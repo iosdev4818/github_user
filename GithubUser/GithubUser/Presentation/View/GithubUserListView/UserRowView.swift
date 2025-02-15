@@ -10,19 +10,29 @@ import SwiftUI
 struct UserRowView: View {
     let viewModel: UserRowViewModel
 
+    private struct Constants {
+        static let imageSize: CGFloat = 100
+    }
+
     var body: some View {
         VStack {
             HStack(alignment: .top) {
                 Group {
                     AsyncImageView(urlString: viewModel.avatarURL)
-                        .frame(width: 120, height: 120)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .frame(width: Constants.imageSize, height: Constants.imageSize)
+                        .clipShape(.circle)
+                        .padding(10)
+                        .background(Color(.systemGray6))
+                        .clipShape(.rect(cornerRadius: 16))
+
                     VStack(alignment: .leading) {
                         Text(viewModel.displayName)
                             .font(.title2)
                             .lineLimit(2)
                             .bold()
+
                         Divider()
+
                         Text("[\(viewModel.htmlURL)](\(viewModel.htmlURL))")
                     }
                 }
@@ -30,7 +40,7 @@ struct UserRowView: View {
             }
             .background(.white)
             .cornerRadius(10)
-            .shadow(color: .black.opacity(0.4), radius: 5, x: 0, y: 5)
+            .shadow(color: .black.opacity(0.4), radius: 5, x: 1, y: 5)
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }

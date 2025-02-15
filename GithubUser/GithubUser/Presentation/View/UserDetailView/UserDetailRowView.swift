@@ -12,12 +12,19 @@ struct UserDetailRowView: View {
     let displayName: String
     let location: String
 
+    private struct Constants {
+        static let imageSize: CGFloat = 100
+    }
+
     var body: some View {
         HStack(alignment: .top) {
             Group {
                 AsyncImageView(urlString: avatarUrl)
-                    .frame(width: 120, height: 120)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .frame(width: Constants.imageSize, height: Constants.imageSize)
+                    .clipShape(.circle)
+                    .padding(10)
+                    .background(Color(.systemGray6))
+                    .clipShape(.rect(cornerRadius: 16))
 
                 VStack(alignment: .leading) {
                     Text(displayName)

@@ -12,7 +12,7 @@ import CoreData
 extension User {
     static func sortDescriptors() -> [NSSortDescriptor] {
         [
-            NSSortDescriptor(keyPath: \User.timestamp, ascending: true),
+            NSSortDescriptor(keyPath: \User.timestamp, ascending: true)
         ]
     }
 }

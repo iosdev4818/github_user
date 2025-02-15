@@ -18,13 +18,14 @@ Get the list of GitHub users and view user details. The application employs the 
 - ✅ Dendency Injection
 - ✅ SwiftUI for displaying Views
 - ✅ Pagination when loading a User list
-- ✅ Caching with Core Data
+- ✅ Image caching
+- ✅ Local Caching with Core Data
 - ✅ Covering Unit Tests
 
 ## Dependencies
 - ✅ Use the [Spyable](https://github.com/Matejkob/swift-spyable) to automatically generate Spy files for Unit Testing
 - ✅ Use the [R.swift](https://github.com/mac-cain13/R.swift) to manage resources
-- ❌ Use [SwiftLint](https://github.com/realm/SwiftLint) to enforce coding conventions and coding style
+- ✅ Use [SwiftLint](https://github.com/realm/SwiftLint) to enforce coding conventions and coding style
 
 ## Architecture
 This project is a POC for the MVVM-C pattern while adhering to Clean Architecture and SOLID principles where:

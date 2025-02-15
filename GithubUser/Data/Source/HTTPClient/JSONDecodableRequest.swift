@@ -47,4 +47,3 @@ class JSONDecodableRequest<ResponseModelType: Decodable>: Request {
         }
     }
 }
-

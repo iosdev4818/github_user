@@ -6,33 +6,22 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct AsyncImageView: View {
     let urlString: String
 
     var body: some View {
-        if let url = URL(string: urlString) {
-            AsyncImage(url: url) { phase in
-                switch phase {
-                    case .empty:
-                        ProgressView()
-                            .progressViewStyle(.circular)
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    case .failure:
-                        Color(.systemGray6)
-                    @unknown default:
-                        Color(.systemGray6)
-                }
+        KFImage.url(URL(string: urlString))
+            .placeholder {
+                ProgressView()
+                    .progressViewStyle(.circular)
             }
+            .resizable()
+            .scaledToFill()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .aspectRatio(1, contentMode: .fill)
             .clipped()
-        } else {
-            Color(.systemGray6)
-        }
     }
 }
 
