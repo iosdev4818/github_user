@@ -10,9 +10,17 @@ Get the list of GitHub users and view user details. The application employs the 
 ### Video Demo
 ![](/assets/video_demo.gif)
 
+## Requirements
+- iOS 16+
+- Xcode 15+
+
+## Installation
+- Open `GithubUser.xcodeproj`
+- Choose `GithubUser` app target. Build and run the application
+
 ## Application Features
-- ✅ User list
-- ✅ User detail
+- ✅ Get User list
+- ✅ Get User detail
 
 ## Implementation features
 - ✅ Dendency Injection
@@ -60,12 +68,3 @@ This project is a POC for the MVVM-C pattern while adhering to Clean Architectur
 ### APINetwork
 - HTTPClient
 - Network requests/responses
-
-## Requirements
-- iOS 16+
-- Xcode 15+
-- Swift Package Manager (SPM)
-
-## Installation
-- Open `GithubUser.xcodeproj`
-- Choose `GithubUser` app target. Build and run the application
