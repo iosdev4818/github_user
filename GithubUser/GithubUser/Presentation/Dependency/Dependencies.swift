@@ -19,7 +19,7 @@ final class DefaultDependencies: Dependencies {
     var useCaseDependencies: UseCaseDependencies
     var repositoryDependencies: RepositoryDependencies
     var httpClientDependencies: HttpClientDependencies
-    
+
     init(
         useCaseDependencies: UseCaseDependencies,
         repositoryDependencies: RepositoryDependencies,

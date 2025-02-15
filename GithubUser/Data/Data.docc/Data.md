@@ -1,13 +1,7 @@
 # ``Data``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+<!--@START_MENU_TOKEN@-->The Data module includes Repository, RemoteDataSource, and LocalDatabase. Additionally, it has a Translator responsible for converting Model Entity to Model DTO.
+This layer also includes specific API requests to connect to different endpoints.
+<!--@END_MENU_TOKEN@-->
 
-## Overview
-
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
-
-## Topics
-
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
-
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+## Quick Start

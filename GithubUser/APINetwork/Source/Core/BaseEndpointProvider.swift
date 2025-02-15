@@ -10,8 +10,10 @@ import Data
 struct DefaultBaseEndpointProvider: BaseEndpointProvider {
     func endpoint(for type: BaseEndpointType) -> String {
         switch type {
-            case .github:
-                return "https://api.github.com"
+        case .github:
+            return "https://api.github.com"
+        @unknown default:
+            fatalError("Must implement all cases in BaseEndpointType: \(type)")
         }
     }
 }

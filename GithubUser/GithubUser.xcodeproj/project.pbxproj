@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC20EDE32D60C23F000E4B09 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC20EDE22D60C23F000E4B09 /* Kingfisher */; };
 		DC79A0C82D5DEF1A007EEE42 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DC79A0C72D5DEF1A007EEE42 /* Spyable */; };
 		DC79A0E92D5ECED8007EEE42 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = DC79A0E82D5ECED8007EEE42 /* RswiftLibrary */; };
 		DC91C8E72D5CCCB40036AC14 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC91C8DD2D5CCCB40036AC14 /* Domain.framework */; };
@@ -113,6 +114,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC20EDF52D60C6B3000E4B09 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DC91C8042D5CCB130036AC14 /* GithubUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC91C8192D5CCB140036AC14 /* GithubUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC91C8232D5CCB150036AC14 /* GithubUserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC20EDE32D60C23F000E4B09 /* Kingfisher in Frameworks */,
 				DC91C9392D5CCE430036AC14 /* APINetwork.framework in Frameworks */,
 				DC79A0E92D5ECED8007EEE42 /* RswiftLibrary in Frameworks */,
 				DC91C9162D5CCCF10036AC14 /* Data.framework in Frameworks */,
@@ -296,6 +299,7 @@
 		DC91C7FB2D5CCB130036AC14 = {
 			isa = PBXGroup;
 			children = (
+				DC20EDF52D60C6B3000E4B09 /* .swiftlint.yml */,
 				DC91C8062D5CCB130036AC14 /* GithubUser */,
 				DC91C81C2D5CCB140036AC14 /* GithubUserTests */,
 				DC91C8262D5CCB150036AC14 /* GithubUserUITests */,
@@ -364,6 +368,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DC20EDEE2D60C5B8000E4B09 /* PBXTargetDependency */,
 				DC47BE0E2D5EE2C9001F6C50 /* PBXTargetDependency */,
 				DC91C8F12D5CCCB40036AC14 /* PBXTargetDependency */,
 				DC91C9152D5CCCF10036AC14 /* PBXTargetDependency */,
@@ -376,6 +381,7 @@
 			packageProductDependencies = (
 				DC79A0E82D5ECED8007EEE42 /* RswiftLibrary */,
 				DCDE1F732D5F74C7000EDE23 /* Spyable */,
+				DC20EDE22D60C23F000E4B09 /* Kingfisher */,
 			);
 			productName = GithubUser;
 			productReference = DC91C8042D5CCB130036AC14 /* GithubUser.app */;
@@ -439,6 +445,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DC20EDF02D60C5DA000E4B09 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C8DE2D5CCCB40036AC14 /* Domain */,
@@ -486,6 +493,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DC20EDF22D60C5EE000E4B09 /* PBXTargetDependency */,
 				DCDE1F3A2D5F42CE000EDE23 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -534,6 +542,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DC20EDF42D60C5F2000E4B09 /* PBXTargetDependency */,
 				DC91C9782D5CE3BA0036AC14 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -630,6 +639,8 @@
 			packageReferences = (
 				DC91C9472D5CCF9F0036AC14 /* XCRemoteSwiftPackageReference "swift-spyable" */,
 				DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */,
+				DC20EDE12D60C23F000E4B09 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				DC20EDEC2D60C5A8000E4B09 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DC91C8052D5CCB130036AC14 /* Products */;
@@ -782,6 +793,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DC20EDEE2D60C5B8000E4B09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DC20EDED2D60C5B8000E4B09 /* SwiftLintBuildToolPlugin */;
+		};
+		DC20EDF02D60C5DA000E4B09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DC20EDEF2D60C5DA000E4B09 /* SwiftLintBuildToolPlugin */;
+		};
+		DC20EDF22D60C5EE000E4B09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DC20EDF12D60C5EE000E4B09 /* SwiftLintBuildToolPlugin */;
+		};
+		DC20EDF42D60C5F2000E4B09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DC20EDF32D60C5F2000E4B09 /* SwiftLintBuildToolPlugin */;
+		};
 		DC47BE0E2D5EE2C9001F6C50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = DC47BE0D2D5EE2C9001F6C50 /* RswiftGenerateInternalResources */;
@@ -1582,6 +1609,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DC20EDE12D60C23F000E4B09 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
+			};
+		};
+		DC20EDEC2D60C5A8000E4B09 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.58.2;
+			};
+		};
 		DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
@@ -1601,6 +1644,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DC20EDE22D60C23F000E4B09 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC20EDE12D60C23F000E4B09 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		DC20EDED2D60C5B8000E4B09 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC20EDEC2D60C5A8000E4B09 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		DC20EDEF2D60C5DA000E4B09 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC20EDEC2D60C5A8000E4B09 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		DC20EDF12D60C5EE000E4B09 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC20EDEC2D60C5A8000E4B09 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+		DC20EDF32D60C5F2000E4B09 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC20EDEC2D60C5A8000E4B09 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
 		DC47BE0D2D5EE2C9001F6C50 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */;

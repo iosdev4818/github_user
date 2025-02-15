@@ -37,20 +37,20 @@ extension Request {
         var urlComponents = try urlComponents(using: baseEndpointProvider)
 
         switch (path, percentEncodedPath) {
-            case (nil, nil):
-                fatalError("Path and percentEncodedPath cannot both be nil")
-            case (nil, percentEncodedPath):
-                guard let urlPercentEncodedPath = percentEncodedPath, isPathValid(urlPercentEncodedPath) else {
-                    fatalError("Invalid percentEncodedPath ")
-                }
-                urlComponents.percentEncodedPath += urlPercentEncodedPath
-            case (path, nil):
-                guard let urlPath = path, isPathValid(urlPath) else {
-                    fatalError("Invalid path ")
-                }
-                urlComponents.path += urlPath
-            case (_, _):
-                fatalError("Path and percentEncodedPath cannot both be set")
+        case (nil, nil):
+            fatalError("Path and percentEncodedPath cannot both be nil")
+        case (nil, percentEncodedPath):
+            guard let urlPercentEncodedPath = percentEncodedPath, isPathValid(urlPercentEncodedPath) else {
+                fatalError("Invalid percentEncodedPath ")
+            }
+            urlComponents.percentEncodedPath += urlPercentEncodedPath
+        case (path, nil):
+            guard let urlPath = path, isPathValid(urlPath) else {
+                fatalError("Invalid path ")
+            }
+            urlComponents.path += urlPath
+        case (_, _):
+            fatalError("Path and percentEncodedPath cannot both be set")
         }
 
         if let queryParameters = queryParameters {

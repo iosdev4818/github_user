@@ -36,14 +36,13 @@ final class AppCoordinator: ObservableObject, GithubUserListCoordinator {
     @ViewBuilder
     func view(for route: AppRoute) -> some View {
         switch route {
-            case .home:
-                createGithubUserListView()
-            case .detail(let username):
-                createUserDetailView(username: username)
+        case .home:
+            createGithubUserListView()
+        case .detail(let username):
+            createUserDetailView(username: username)
         }
     }
 }
-
 
 private extension AppCoordinator {
     func createGithubUserListView() -> GithubUserListView {

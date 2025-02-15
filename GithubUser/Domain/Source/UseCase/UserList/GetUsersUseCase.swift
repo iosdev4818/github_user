@@ -15,12 +15,12 @@ public protocol GetUsersUseCase {
 
 struct DefaultGetUsersUseCase: GetUsersUseCase {
     private let githubRepository: GithubRepository
-    
+
     init(githubRepository: GithubRepository) {
         self.githubRepository = githubRepository
     }
-    
+
     func invoke() -> AnyPublisher<[UserModel], Never> {
-        return githubRepository.getUsers()
+        githubRepository.getUsers()
     }
 }
