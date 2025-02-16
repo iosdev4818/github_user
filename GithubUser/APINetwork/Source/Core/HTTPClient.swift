@@ -64,7 +64,7 @@ private extension DefaultHTTPClient {
         )
         return output
     }
-    
+
     /// Check and retrieve from the cache if it exists
     /// - Parameter request: url for request
     /// - Returns: response data and url response
@@ -75,7 +75,7 @@ private extension DefaultHTTPClient {
         }
         return nil
     }
-    
+
     /// Perform a URLRequest and receive the response data.
     /// - Parameters:
     ///   - request: URL request

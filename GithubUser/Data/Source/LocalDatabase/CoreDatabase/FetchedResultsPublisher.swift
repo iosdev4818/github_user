@@ -8,7 +8,6 @@
 import Combine
 import CoreData
 
-
 /// Wrap NSFetchedResultsController and return it as an Publisher
 class FetchedResultsPublisher<T: NSFetchRequestResult>: Publisher {
     typealias Output = [T]

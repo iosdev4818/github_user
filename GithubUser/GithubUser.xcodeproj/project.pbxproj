@@ -48,6 +48,13 @@
 			remoteGlobalIDString = DC00AFC32D61991600EFB0F5;
 			remoteInfo = TestHostApp;
 		};
+		DC0D27FA2D6215D800060D74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC00AFC32D61991600EFB0F5;
+			remoteInfo = TestHostApp;
+		};
 		DC91C81A2D5CCB140036AC14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
@@ -471,6 +478,7 @@
 			);
 			dependencies = (
 				DC91C81B2D5CCB140036AC14 /* PBXTargetDependency */,
+				DC0D27FB2D6215D800060D74 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C81C2D5CCB140036AC14 /* GithubUserTests */,
@@ -902,6 +910,11 @@
 			isa = PBXTargetDependency;
 			target = DC00AFC32D61991600EFB0F5 /* TestHostApp */;
 			targetProxy = DC00AFD62D61995200EFB0F5 /* PBXContainerItemProxy */;
+		};
+		DC0D27FB2D6215D800060D74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC00AFC32D61991600EFB0F5 /* TestHostApp */;
+			targetProxy = DC0D27FA2D6215D800060D74 /* PBXContainerItemProxy */;
 		};
 		DC20EDEE2D60C5B8000E4B09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
