@@ -7,7 +7,6 @@
 
 import Data
 
-
 /// URLSession configuration
 private enum HTTPClientConstant {
     static let memoryCapacity = 10 * 1024 * 1024  // 10 MB in memory
@@ -17,8 +16,6 @@ private enum HTTPClientConstant {
     static let timeoutIntervalForResource = 60.0  // 60 seconds for overall request
     static let httpMaximumConnectionsPerHost = 5
 }
-
-
 
 /// Implement the HttpClientDependencies protocol
 final class DefaultHttpClientDependencies: HttpClientDependencies {
@@ -34,7 +31,6 @@ final class DefaultHttpClientDependencies: HttpClientDependencies {
             session: urlSession
         )
     }()
-
 
     /// Setting URLSession for httpClient
     private lazy var urlSession: URLSession = {

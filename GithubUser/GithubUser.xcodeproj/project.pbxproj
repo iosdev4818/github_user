@@ -22,7 +22,6 @@
 		DC91C9492D5CCF9F0036AC14 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DC91C9482D5CCF9F0036AC14 /* Spyable */; };
 		DC91C9822D5CE4BD0036AC14 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DC91C9812D5CE4BD0036AC14 /* Spyable */; };
 		DCCC30FE2D61E22500A5E3F5 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = DCCC30FC2D61E22500A5E3F5 /* TestPlan.xctestplan */; };
-		DCCC31252D61F41400A5E3F5 /* LifetimeTracker in Frameworks */ = {isa = PBXBuildFile; productRef = DCCC31242D61F41400A5E3F5 /* LifetimeTracker */; };
 		DCDE1F742D5F74C7000EDE23 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DCDE1F732D5F74C7000EDE23 /* Spyable */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +41,13 @@
 			remoteInfo = TestHostApp;
 		};
 		DC00AFD62D61995200EFB0F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC00AFC32D61991600EFB0F5;
+			remoteInfo = TestHostApp;
+		};
+		DC0D27FA2D6215D800060D74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
 			proxyType = 1;
@@ -264,7 +270,6 @@
 				DC79A0E92D5ECED8007EEE42 /* RswiftLibrary in Frameworks */,
 				DC91C9162D5CCCF10036AC14 /* Data.framework in Frameworks */,
 				DCDE1F742D5F74C7000EDE23 /* Spyable in Frameworks */,
-				DCCC31252D61F41400A5E3F5 /* LifetimeTracker in Frameworks */,
 				DC91C8F22D5CCCB40036AC14 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +458,6 @@
 				DC79A0E82D5ECED8007EEE42 /* RswiftLibrary */,
 				DCDE1F732D5F74C7000EDE23 /* Spyable */,
 				DC20EDE22D60C23F000E4B09 /* Kingfisher */,
-				DCCC31242D61F41400A5E3F5 /* LifetimeTracker */,
 			);
 			productName = GithubUser;
 			productReference = DC91C8042D5CCB130036AC14 /* GithubUser.app */;
@@ -471,6 +475,7 @@
 			);
 			dependencies = (
 				DC91C81B2D5CCB140036AC14 /* PBXTargetDependency */,
+				DC0D27FB2D6215D800060D74 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C81C2D5CCB140036AC14 /* GithubUserTests */,
@@ -719,7 +724,6 @@
 				DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */,
 				DC20EDE12D60C23F000E4B09 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				DC20EDEC2D60C5A8000E4B09 /* XCRemoteSwiftPackageReference "SwiftLint" */,
-				DCCC31232D61F41400A5E3F5 /* XCRemoteSwiftPackageReference "LifetimeTracker" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DC91C8052D5CCB130036AC14 /* Products */;
@@ -902,6 +906,11 @@
 			isa = PBXTargetDependency;
 			target = DC00AFC32D61991600EFB0F5 /* TestHostApp */;
 			targetProxy = DC00AFD62D61995200EFB0F5 /* PBXContainerItemProxy */;
+		};
+		DC0D27FB2D6215D800060D74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC00AFC32D61991600EFB0F5 /* TestHostApp */;
+			targetProxy = DC0D27FA2D6215D800060D74 /* PBXContainerItemProxy */;
 		};
 		DC20EDEE2D60C5B8000E4B09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1818,14 +1827,6 @@
 				minimumVersion = 0.8.0;
 			};
 		};
-		DCCC31232D61F41400A5E3F5 /* XCRemoteSwiftPackageReference "LifetimeTracker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/krzysztofzablocki/LifetimeTracker";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.4;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1878,11 +1879,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC91C9472D5CCF9F0036AC14 /* XCRemoteSwiftPackageReference "swift-spyable" */;
 			productName = Spyable;
-		};
-		DCCC31242D61F41400A5E3F5 /* LifetimeTracker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DCCC31232D61F41400A5E3F5 /* XCRemoteSwiftPackageReference "LifetimeTracker" */;
-			productName = LifetimeTracker;
 		};
 		DCDE1F732D5F74C7000EDE23 /* Spyable */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -20,6 +20,7 @@ Get the list of GitHub users and view user details. The application employs the 
 - Choose `GithubUser` app target. Build and run the application
 - For Unit Test, choose `Test navigation` -> run `TestPlan.xctestpan`
 ![](/assets/UT_results.png)
+Note: The first build you might need to approve the new plugin by clicking the build error warning you about the new plugin.
 
 ## Application Features
 - ✅ Get User list
@@ -34,7 +35,7 @@ Get the list of GitHub users and view user details. The application employs the 
 - ✅ Image caching
 - ✅ Local Caching with Core Data
 - ✅ Covering Unit Tests
-- ✅ Memory Leak/Retain Cycle Detector is supported ([LifetimeTracker](https://github.com/krzysztofzablocki/LifetimeTracker))
+- ✅ Memory Leak/Retain Cycle checked with `Instruments`
 
 ## Dependencies
 - ✅ Use the [Spyable](https://github.com/Matejkob/swift-spyable) to automatically generate Spy files for Unit Testing

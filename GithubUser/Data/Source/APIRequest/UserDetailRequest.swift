@@ -5,7 +5,6 @@
 //  Created by Bao Nguyen on 12/2/25.
 //
 
-
 /// User detail request
 final class UserDetailRequest: JSONDecodableRequest<Network.UserDetail> {
 

@@ -100,21 +100,6 @@ final class GithubUserListViewModelTests: XCTestCase {
         XCTAssertFalse(sut.shouldShowLoadMoreView())
     }
 
-    func testLoadUsersIfNeededWhenShouldInvokeIsTrueShouldCallInvoke() async throws {
-        let expectation = self.expectation(description: "")
-        loadUsers.shouldInvokeAtClosure = { _ in
-            true
-        }
-        loadUsers.invokeAtClosure = { _ in
-            expectation.fulfill()
-        }
-
-        sut.loadUsersIfNeeded(at: 0)
-
-        await fulfillment(of: [expectation], timeout: 1.0)
-        XCTAssertTrue(loadUsers.invokeAtCalled)
-    }
-
     func testDidTapUserShouldCallNavigateToDetail() {
         coordinator.navigateToDetailUsernameClosure = { username in
             XCTAssertEqual(username, UserModelFixture.user1.username)

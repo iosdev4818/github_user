@@ -84,9 +84,11 @@ final class UserDetailViewModelTests: XCTestCase {
 
     func testRefresh() async {
         let loadUserDetailExpectation = self.expectation(description: "Load user detail")
-        loadUserDetail.invokeClosure = {
+        loadUserDetail.invokeClosure = { _ in
             loadUserDetailExpectation.fulfill()
         }
+
+        sut = UserDetailViewModel(username: "username", loadUserDetail: loadUserDetail, getUserDetail: getUserDetail)
 
         sut.refresh()
 
