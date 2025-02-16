@@ -30,6 +30,7 @@ Get the list of GitHub users and view user details. The application employs the 
 - ✅ Image caching
 - ✅ Local Caching with Core Data
 - ✅ Covering Unit Tests
+![](/assets/UT_results.png)
 
 ## Dependencies
 - ✅ Use the [Spyable](https://github.com/Matejkob/swift-spyable) to automatically generate Spy files for Unit Testing

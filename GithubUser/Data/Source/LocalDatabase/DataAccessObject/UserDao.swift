@@ -21,7 +21,7 @@ protocol UserDao {
 struct DefaultUserDao: UserDao {
 
     struct Constant {
-        static let defaultFetchBatchSize = 25
+        static let defaultFetchBatchSize = 20
     }
 
     private let coreDatabase: CoreDatabase

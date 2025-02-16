@@ -46,9 +46,7 @@ final class CoreDatabaseSpy: CoreDatabase {
     }
 
     func saveContext() {
-        if viewContext.hasChanges {
-            try? viewContext.save()
-        }
+        try! viewContext.save()
     }
 
     func clearData() {

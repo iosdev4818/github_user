@@ -59,7 +59,7 @@ struct DefaultGithubRepository: GithubRepository {
 
     func getUsersCount() -> Int {
         do {
-            return try userDao.getUsersCount(in: dataBase.currentBackgroundContext)
+            return try userDao.getUsersCount(in: dataBase.viewContext)
         } catch {
             return 0
         }

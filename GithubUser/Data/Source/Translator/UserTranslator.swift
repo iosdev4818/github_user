@@ -9,11 +9,7 @@ import Domain
 import CoreData
 internal import Spyable
 
-enum TranslatorError: Error {
-    case noManagedObjectContext
-}
-
-@Spyable(behindPreprocessorFlag: "DEBUG || TESTING", accessLevel: .public)
+@Spyable(behindPreprocessorFlag: "DEBUG || TESTING")
 protocol UserTranslator {
     func invoke(user: User?) -> UserModel?
     func invoke(users: [User]) -> [UserModel]
@@ -25,8 +21,12 @@ struct DefaultUserTranslator: UserTranslator {
     }
 
     func invoke(users: [User]) -> [UserModel] {
-        users.compactMap {
-            $0.toUserModel()
+        var results = [UserModel]()
+        for user in users {
+            if let userModel = user.toUserModel() {
+                results.append(userModel)
+            }
         }
+        return results
     }
 }

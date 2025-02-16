@@ -12,7 +12,6 @@ protocol CoreDatabase {
     var viewContext: NSManagedObjectContext { get }
     var currentBackgroundContext: NSManagedObjectContext { get }
     func saveContext()
-    func clearData()
 }
 
 final class DefaultCoreDatabase: CoreDatabase {

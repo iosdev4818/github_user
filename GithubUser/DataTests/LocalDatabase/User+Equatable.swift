@@ -10,7 +10,7 @@ import CoreData
 
 extension User {
     public static func assertEqual(_ lhs: User, _ rhs: User) -> Bool {
-        return lhs.avatar == rhs.avatar &&
+        lhs.avatar == rhs.avatar &&
         lhs.followers == rhs.followers &&
         lhs.following == rhs.following &&
         lhs.htmlUrlString == rhs.htmlUrlString &&
