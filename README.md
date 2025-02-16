@@ -34,6 +34,7 @@ Get the list of GitHub users and view user details. The application employs the 
 - ✅ Image caching
 - ✅ Local Caching with Core Data
 - ✅ Covering Unit Tests
+- ✅ Memory Leak/Retain Cycle Detector is supported ([LifetimeTracker](https://github.com/krzysztofzablocki/LifetimeTracker))
 
 ## Dependencies
 - ✅ Use the [Spyable](https://github.com/Matejkob/swift-spyable) to automatically generate Spy files for Unit Testing

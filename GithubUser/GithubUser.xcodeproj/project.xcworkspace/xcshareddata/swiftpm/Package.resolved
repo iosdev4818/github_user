@@ -1,5 +1,5 @@
 {
-  "originHash" : "4e492ce5a257f8dfdf43fd5ceb43c29eab0809716cd1a82046fa6df35d6305e0",
+  "originHash" : "56b0c50931363d789b279d5af9aeb84e71bf636f0c3c75362d3a98de81048b06",
   "pins" : [
     {
       "identity" : "collectionconcurrencykit",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "3db26ab625d194c38e68c1a40e43d1bc12743fe0",
         "version" : "8.2.0"
+      }
+    },
+    {
+      "identity" : "lifetimetracker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzysztofzablocki/LifetimeTracker",
+      "state" : {
+        "revision" : "fccc98aae719f6615d1f0cfd8f5e60f3888bdf62",
+        "version" : "1.8.4"
       }
     },
     {
