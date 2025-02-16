@@ -5,31 +5,34 @@
 //  Created by Bao Nguyen on 14/2/25.
 //
 
-import XCTest
+import Testing
 @testable import Data
 
-final class UserTranslatorTests: CoreDatabaseBaseTest {
-    func testInvokeUserWithoutUser() {
+@Suite("UserTranslatorTests", .serialized)
+class UserTranslatorTests: CoreDatabaseBaseTest {
+    @Test func testInvokeUserWithoutUser() {
         let sut = DefaultUserTranslator()
         let actual = sut.invoke(user: nil)
-        XCTAssertNil(actual)
+        #expect(actual == nil)
     }
 
-    func testInvokeUserWithUser() {
+    @Test func testInvokeUserWithUser() {
+        let user = UserFixture.user1(in: viewContext)
         let sut = DefaultUserTranslator()
-        let actual = sut.invoke(user: UserFixture.user1(in: viewContext))
-        XCTAssertNotNil(actual)
+        let actual = sut.invoke(user: user)
+        #expect(actual != nil)
     }
 
-    func testInvokeUsersWithEmpty() {
+    @Test func testInvokeUsersWithEmpty() {
         let sut = DefaultUserTranslator()
         let actuals = sut.invoke(users: [])
-        XCTAssertTrue(actuals.isEmpty)
+        #expect(actuals.isEmpty)
     }
 
-    func testInvokeUsersWithUsers() {
+    @Test func testInvokeUsersWithUsers() {
+        let users = [UserFixture.user1(in: viewContext)]
         let sut = DefaultUserTranslator()
-        let actuals = sut.invoke(users: [UserFixture.user1(in: viewContext)])
-        XCTAssertEqual(actuals.count, 1)
+        let actuals = sut.invoke(users: users)
+        #expect(actuals.count == 1)
     }
 }

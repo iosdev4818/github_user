@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import APINetwork
+@testable import Data
 
 final class DefaultBaseEndpointProviderTests: XCTestCase {
     func test() {

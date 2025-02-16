@@ -5,6 +5,7 @@
 //  Created by Bao Nguyen on 12/2/25.
 //
 
+/// Decoder for JSON responses
 class JSONDecodableRequest<ResponseModelType: Decodable>: Request {
     let httpMethod: HTTPMethod
     let baseEndpoint: BaseEndpointType
@@ -29,12 +30,20 @@ class JSONDecodableRequest<ResponseModelType: Decodable>: Request {
         self.body = body
     }
 
+    /// Handle rdecode Data to JSON
+    /// - Parameter output: output from HTTPClient
+    /// - Returns: JSON model
     func decode(_ output: (data: Data, response: URLResponse)) throws -> ResponseModelType {
         let requestPath = output.response.url?.relativeString
 
         return try decodeResponseBody(output.data, requestPath: requestPath)
     }
 
+    /// Decode from Data to JSON object
+    /// - Parameters:
+    ///   - data: Data
+    ///   - requestPath: url path
+    /// - Returns: JSON data model
     private func decodeResponseBody<ResponseBodyType>(_ data: Data, requestPath: String?) throws -> ResponseBodyType where ResponseBodyType: Decodable {
         do {
             return try JSONDecoder().decode(ResponseBodyType.self, from: data)

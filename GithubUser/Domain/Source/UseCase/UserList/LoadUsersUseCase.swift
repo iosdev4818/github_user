@@ -9,8 +9,17 @@ internal import Spyable
 
 @Spyable(behindPreprocessorFlag: "DEBUG || TESTING", accessLevel: .public)
 public protocol LoadUsersUseCase {
+    /// Check whether to invoke for the item at a specific index
+    /// - Parameter index: index of user
+    /// - Returns: true/false
     func shouldInvoke(at index: Int) -> Bool
+
+    /// Interact with repository to load the remote user
+    /// - Parameter index: index of current user
     func invoke(at index: Int) async throws
+
+    /// Clear all Queue and User data
+    func invalidate() throws
 }
 
 final class DefaultLoadUsersUseCase: LoadUsersUseCase {
@@ -43,5 +52,10 @@ final class DefaultLoadUsersUseCase: LoadUsersUseCase {
             usersQueue.remove(index)
             throw error
         }
+    }
+
+    func invalidate() throws {
+        usersQueue.removeAll()
+        try githubRepository.deleteUsers()
     }
 }

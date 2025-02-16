@@ -16,10 +16,9 @@ class BaseTests: XCTestCase {
         }
         return try? Data(contentsOf: URL(fileURLWithPath: pathString))
     }
-
 }
 
-class CoreDatabaseBaseTest: BaseTests {
+class CoreDatabaseBaseTest {
     var database: CoreDatabase!
 
     var persistentContainer: NSPersistentContainer {
@@ -34,13 +33,8 @@ class CoreDatabaseBaseTest: BaseTests {
         database.currentBackgroundContext
     }
 
-    override func setUpWithError() throws {
-        try super.setUpWithError()
+    init() {
         database = CoreDatabaseSpy()
     }
-
-    override func tearDownWithError() throws {
-        try super.tearDownWithError()
-        database.clearData()
-    }
 }
+

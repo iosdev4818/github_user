@@ -31,6 +31,9 @@ struct GithubUserListView: View {
             }
         }
         .listStyle(.plain)
+        .refreshable {
+            viewModel.refresh()
+        }
         .onAppear {
             viewModel.startUpdating()
         }

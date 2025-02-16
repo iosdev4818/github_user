@@ -27,9 +27,11 @@ final class UserDetailViewModel: ObservableObject {
         self.loadUserDetail = loadUserDetail
         self.getUserDetail = getUserDetail
 
+        // Fetch initialize user
         fetchUserDetail()
     }
 
+    // Start observing changes from CoreData
     func startUpdating() {
         getUserDetailPublisher?.cancel()
         getUserDetailPublisher = nil
@@ -42,9 +44,14 @@ final class UserDetailViewModel: ObservableObject {
             }
     }
 
+    // Stop observing changes from CoreData
     func stopUpdating() {
         getUserDetailPublisher?.cancel()
         getUserDetailPublisher = nil
+    }
+
+    func refresh() {
+        fetchUserDetail()
     }
 
     private func fetchUserDetail() {

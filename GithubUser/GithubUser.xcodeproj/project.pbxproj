@@ -21,10 +21,33 @@
 		DC91C93A2D5CCE430036AC14 /* APINetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC91C9242D5CCE430036AC14 /* APINetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC91C9492D5CCF9F0036AC14 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DC91C9482D5CCF9F0036AC14 /* Spyable */; };
 		DC91C9822D5CE4BD0036AC14 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DC91C9812D5CE4BD0036AC14 /* Spyable */; };
+		DCCC30FE2D61E22500A5E3F5 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = DCCC30FC2D61E22500A5E3F5 /* TestPlan.xctestplan */; };
+		DCCC31252D61F41400A5E3F5 /* LifetimeTracker in Frameworks */ = {isa = PBXBuildFile; productRef = DCCC31242D61F41400A5E3F5 /* LifetimeTracker */; };
 		DCDE1F742D5F74C7000EDE23 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DCDE1F732D5F74C7000EDE23 /* Spyable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DC00AFD22D61994500EFB0F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC00AFC32D61991600EFB0F5;
+			remoteInfo = TestHostApp;
+		};
+		DC00AFD42D61994E00EFB0F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC00AFC32D61991600EFB0F5;
+			remoteInfo = TestHostApp;
+		};
+		DC00AFD62D61995200EFB0F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC00AFC32D61991600EFB0F5;
+			remoteInfo = TestHostApp;
+		};
 		DC91C81A2D5CCB140036AC14 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DC91C7FC2D5CCB130036AC14 /* Project object */;
@@ -114,6 +137,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC00AFC42D61991600EFB0F5 /* TestHostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestHostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC20EDF52D60C6B3000E4B09 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DC91C8042D5CCB130036AC14 /* GithubUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC91C8192D5CCB140036AC14 /* GithubUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +148,7 @@
 		DC91C90A2D5CCCF10036AC14 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC91C9242D5CCE430036AC14 /* APINetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APINetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC91C92D2D5CCE430036AC14 /* APINetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APINetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCCC30FC2D61E22500A5E3F5 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -158,6 +183,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		DC00AFC52D61991600EFB0F5 /* TestHostApp */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TestHostApp;
+			sourceTree = "<group>";
+		};
 		DC91C8062D5CCB130036AC14 /* GithubUser */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = GithubUser;
@@ -218,6 +248,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DC00AFC12D61991600EFB0F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC91C8012D5CCB130036AC14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +264,7 @@
 				DC79A0E92D5ECED8007EEE42 /* RswiftLibrary in Frameworks */,
 				DC91C9162D5CCCF10036AC14 /* Data.framework in Frameworks */,
 				DCDE1F742D5F74C7000EDE23 /* Spyable in Frameworks */,
+				DCCC31252D61F41400A5E3F5 /* LifetimeTracker in Frameworks */,
 				DC91C8F22D5CCCB40036AC14 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,7 +347,9 @@
 				DC91C9102D5CCCF10036AC14 /* DataTests */,
 				DC91C9252D5CCE430036AC14 /* APINetwork */,
 				DC91C9332D5CCE430036AC14 /* APINetworkTests */,
+				DC00AFC52D61991600EFB0F5 /* TestHostApp */,
 				DC91C8052D5CCB130036AC14 /* Products */,
+				DCCC30FD2D61E22500A5E3F5 /* TestPlan */,
 			);
 			sourceTree = "<group>";
 		};
@@ -325,8 +365,17 @@
 				DC91C90A2D5CCCF10036AC14 /* DataTests.xctest */,
 				DC91C9242D5CCE430036AC14 /* APINetwork.framework */,
 				DC91C92D2D5CCE430036AC14 /* APINetworkTests.xctest */,
+				DC00AFC42D61991600EFB0F5 /* TestHostApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DCCC30FD2D61E22500A5E3F5 /* TestPlan */ = {
+			isa = PBXGroup;
+			children = (
+				DCCC30FC2D61E22500A5E3F5 /* TestPlan.xctestplan */,
+			);
+			path = TestPlan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +405,28 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		DC00AFC32D61991600EFB0F5 /* TestHostApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC00AFD12D61991700EFB0F5 /* Build configuration list for PBXNativeTarget "TestHostApp" */;
+			buildPhases = (
+				DC00AFC02D61991600EFB0F5 /* Sources */,
+				DC00AFC12D61991600EFB0F5 /* Frameworks */,
+				DC00AFC22D61991600EFB0F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DC00AFC52D61991600EFB0F5 /* TestHostApp */,
+			);
+			name = TestHostApp;
+			packageProductDependencies = (
+			);
+			productName = TestHostApp;
+			productReference = DC00AFC42D61991600EFB0F5 /* TestHostApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		DC91C8032D5CCB130036AC14 /* GithubUser */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC91C82D2D5CCB150036AC14 /* Build configuration list for PBXNativeTarget "GithubUser" */;
@@ -382,6 +453,7 @@
 				DC79A0E82D5ECED8007EEE42 /* RswiftLibrary */,
 				DCDE1F732D5F74C7000EDE23 /* Spyable */,
 				DC20EDE22D60C23F000E4B09 /* Kingfisher */,
+				DCCC31242D61F41400A5E3F5 /* LifetimeTracker */,
 			);
 			productName = GithubUser;
 			productReference = DC91C8042D5CCB130036AC14 /* GithubUser.app */;
@@ -470,6 +542,7 @@
 			);
 			dependencies = (
 				DC91C8E92D5CCCB40036AC14 /* PBXTargetDependency */,
+				DC00AFD72D61995200EFB0F5 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C8EC2D5CCCB40036AC14 /* DomainTests */,
@@ -519,6 +592,7 @@
 			);
 			dependencies = (
 				DC91C90D2D5CCCF10036AC14 /* PBXTargetDependency */,
+				DC00AFD52D61994E00EFB0F5 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C9102D5CCCF10036AC14 /* DataTests */,
@@ -568,6 +642,7 @@
 			);
 			dependencies = (
 				DC91C9302D5CCE430036AC14 /* PBXTargetDependency */,
+				DC00AFD32D61994500EFB0F5 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				DC91C9332D5CCE430036AC14 /* APINetworkTests */,
@@ -589,6 +664,9 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
+					DC00AFC32D61991600EFB0F5 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 					DC91C8032D5CCB130036AC14 = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -607,7 +685,7 @@
 					DC91C8E52D5CCCB40036AC14 = {
 						CreatedOnToolsVersion = 16.1;
 						LastSwiftMigration = 1610;
-						TestTargetID = DC91C8032D5CCB130036AC14;
+						TestTargetID = DC00AFC32D61991600EFB0F5;
 					};
 					DC91C9002D5CCCF10036AC14 = {
 						CreatedOnToolsVersion = 16.1;
@@ -615,7 +693,7 @@
 					DC91C9092D5CCCF10036AC14 = {
 						CreatedOnToolsVersion = 16.1;
 						LastSwiftMigration = 1610;
-						TestTargetID = DC91C8032D5CCB130036AC14;
+						TestTargetID = DC00AFC32D61991600EFB0F5;
 					};
 					DC91C9232D5CCE430036AC14 = {
 						CreatedOnToolsVersion = 16.1;
@@ -623,7 +701,7 @@
 					DC91C92C2D5CCE430036AC14 = {
 						CreatedOnToolsVersion = 16.1;
 						LastSwiftMigration = 1610;
-						TestTargetID = DC91C8032D5CCB130036AC14;
+						TestTargetID = DC00AFC32D61991600EFB0F5;
 					};
 				};
 			};
@@ -641,6 +719,7 @@
 				DC79A0E72D5ECED8007EEE42 /* XCRemoteSwiftPackageReference "R.swift" */,
 				DC20EDE12D60C23F000E4B09 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				DC20EDEC2D60C5A8000E4B09 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				DCCC31232D61F41400A5E3F5 /* XCRemoteSwiftPackageReference "LifetimeTracker" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DC91C8052D5CCB130036AC14 /* Products */;
@@ -656,15 +735,24 @@
 				DC91C9092D5CCCF10036AC14 /* DataTests */,
 				DC91C9232D5CCE430036AC14 /* APINetwork */,
 				DC91C92C2D5CCE430036AC14 /* APINetworkTests */,
+				DC00AFC32D61991600EFB0F5 /* TestHostApp */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DC00AFC22D61991600EFB0F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC91C8022D5CCB130036AC14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCCC30FE2D61E22500A5E3F5 /* TestPlan.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +815,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DC00AFC02D61991600EFB0F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC91C8002D5CCB130036AC14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -793,6 +888,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DC00AFD32D61994500EFB0F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC00AFC32D61991600EFB0F5 /* TestHostApp */;
+			targetProxy = DC00AFD22D61994500EFB0F5 /* PBXContainerItemProxy */;
+		};
+		DC00AFD52D61994E00EFB0F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC00AFC32D61991600EFB0F5 /* TestHostApp */;
+			targetProxy = DC00AFD42D61994E00EFB0F5 /* PBXContainerItemProxy */;
+		};
+		DC00AFD72D61995200EFB0F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC00AFC32D61991600EFB0F5 /* TestHostApp */;
+			targetProxy = DC00AFD62D61995200EFB0F5 /* PBXContainerItemProxy */;
+		};
 		DC20EDEE2D60C5B8000E4B09 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			productRef = DC20EDED2D60C5B8000E4B09 /* SwiftLintBuildToolPlugin */;
@@ -866,6 +976,64 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		DC00AFCF2D61991700EFB0F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TestHostApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDev.TestHostApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC00AFD02D61991700EFB0F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TestHostApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = "$(inherited)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOSDev.TestHostApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		DC91C82B2D5CCB150036AC14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1237,7 +1405,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubUser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GithubUser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHostApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestHostApp";
 			};
 			name = Debug;
 		};
@@ -1259,7 +1427,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubUser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GithubUser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHostApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestHostApp";
 			};
 			name = Release;
 		};
@@ -1362,7 +1530,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubUser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GithubUser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHostApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestHostApp";
 			};
 			name = Debug;
 		};
@@ -1384,7 +1552,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubUser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GithubUser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHostApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestHostApp";
 			};
 			name = Release;
 		};
@@ -1487,7 +1655,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubUser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GithubUser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHostApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestHostApp";
 			};
 			name = Debug;
 		};
@@ -1509,13 +1677,22 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GithubUser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GithubUser";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestHostApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestHostApp";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DC00AFD12D61991700EFB0F5 /* Build configuration list for PBXNativeTarget "TestHostApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC00AFCF2D61991700EFB0F5 /* Debug */,
+				DC00AFD02D61991700EFB0F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DC91C7FF2D5CCB130036AC14 /* Build configuration list for PBXProject "GithubUser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1641,6 +1818,14 @@
 				minimumVersion = 0.8.0;
 			};
 		};
+		DCCC31232D61F41400A5E3F5 /* XCRemoteSwiftPackageReference "LifetimeTracker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/LifetimeTracker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1693,6 +1878,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC91C9472D5CCF9F0036AC14 /* XCRemoteSwiftPackageReference "swift-spyable" */;
 			productName = Spyable;
+		};
+		DCCC31242D61F41400A5E3F5 /* LifetimeTracker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCCC31232D61F41400A5E3F5 /* XCRemoteSwiftPackageReference "LifetimeTracker" */;
+			productName = LifetimeTracker;
 		};
 		DCDE1F732D5F74C7000EDE23 /* Spyable */ = {
 			isa = XCSwiftPackageProductDependency;

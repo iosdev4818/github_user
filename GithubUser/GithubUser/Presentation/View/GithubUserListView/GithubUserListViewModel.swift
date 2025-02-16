@@ -36,6 +36,7 @@ final class GithubUserListViewModel: ObservableObject {
         loadUsersIfNeeded(at: 0)
     }
 
+    // Start observing changes from CoreData
     func startUpdating() {
         getUsersPublisher?.cancel()
         getUsersPublisher = nil
@@ -48,6 +49,7 @@ final class GithubUserListViewModel: ObservableObject {
             }
     }
 
+    // Stop observing changes from CoreData
     func stopUpdating() {
         getUsersPublisher?.cancel()
         getUsersPublisher = nil
@@ -59,6 +61,7 @@ final class GithubUserListViewModel: ObservableObject {
         && users.count % Constants.pageSize == 0
     }
 
+    // Check and perform load more action
     func loadUsersIfNeeded(at index: Int) {
         guard loadUsers.shouldInvoke(at: index) else {
             return
@@ -69,6 +72,17 @@ final class GithubUserListViewModel: ObservableObject {
                 try await loadUsers.invoke(at: index)
             } catch {
                 debugPrint("[GithubUserListViewModel] loadUsersIfNeeded error: \(error)")
+            }
+        }
+    }
+
+    func refresh() {
+        Task {
+            do {
+                try loadUsers.invalidate()
+                loadUsersIfNeeded(at: 0)
+            } catch {
+                debugPrint("[GithubUserListViewModel] refresh error: \(error)")
             }
         }
     }

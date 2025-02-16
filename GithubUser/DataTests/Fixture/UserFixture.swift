@@ -9,7 +9,7 @@ import CoreData
 @testable import Data
 
 struct UserFixture {
-    static func user1(in context: NSManagedObjectContext) -> User {
+    static func user1(in context: NSManagedObjectContext? = nil) -> User {
         user(
             username: "mojombo",
             avatar: "https://avatars.githubusercontent.com/u/1?v=4",
@@ -21,7 +21,19 @@ struct UserFixture {
         )
     }
 
-    static func user2(in context: NSManagedObjectContext) -> User {
+    static func user1Detail(in context: NSManagedObjectContext? = nil) -> User {
+        user(
+            username: "mojombo",
+            avatar: "https://avatars.githubusercontent.com/u/1?v=4",
+            html: "https://github.com/mojombo",
+            location: "San Francisco",
+            followers: 24127,
+            following: 11,
+            in: context
+        )
+    }
+
+    static func user2(in context: NSManagedObjectContext? = nil) -> User {
         user(
             username: "defunkt",
             avatar: "https://avatars.githubusercontent.com/u/2?v=4",
@@ -35,8 +47,8 @@ struct UserFixture {
 }
 
 private extension UserFixture {
-    static func user(username: String, avatar: String, html: String, location: String, followers: Int, following: Int, in context: NSManagedObjectContext) -> User {
-        let user = User(using: context)
+    static func user(username: String, avatar: String, html: String, location: String, followers: Int, following: Int, in context: NSManagedObjectContext? = nil) -> User {
+        let user = User.instance(in: context)
         user.timestamp = Date()
         user.username = username
         user.avatar = avatar

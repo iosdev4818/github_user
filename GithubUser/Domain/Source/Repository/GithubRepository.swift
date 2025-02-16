@@ -15,4 +15,5 @@ public protocol GithubRepository {
     func getUsers() -> AnyPublisher<[UserModel], Never>
     func getUserDetail(username: String) -> AnyPublisher<UserModel?, Never>
     func getUsersCount() -> Int
+    func deleteUsers() throws
 }

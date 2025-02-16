@@ -9,9 +9,7 @@ import CoreData
 @testable import Data
 
 extension NSManagedObject {
-    convenience init(using usedContext: NSManagedObjectContext) {
-        let name = String(describing: type(of: self))
-        let entity = NSEntityDescription.entity(forEntityName: name, in: usedContext)!
-        self.init(entity: entity, insertInto: usedContext)
+    static func instance(in context: NSManagedObjectContext? = nil) -> Self {
+        Self(entity: Self.entity(), insertInto: context)
     }
 }

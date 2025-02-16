@@ -32,7 +32,7 @@ final class DefaultRepositoryDependencies: RepositoryDependencies {
     }()
 }
 
-public final class RepositoryDependenciesFactory {
+public struct RepositoryDependenciesFactory {
     public static func make(httpClientDependencies: HttpClientDependencies) -> RepositoryDependencies {
         DefaultRepositoryDependencies(
             remoteDataSourceDependencies: DefaultRemoteDataSourceDependencies(

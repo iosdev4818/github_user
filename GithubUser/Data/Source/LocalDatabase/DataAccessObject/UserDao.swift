@@ -11,17 +11,44 @@ internal import Spyable
 
 @Spyable(behindPreprocessorFlag: "DEBUG || TESTING")
 protocol UserDao {
+    /// Insert Network.User into CoreData
+    /// - Parameters:
+    ///   - users: Array of Network.User
+    ///   - context: The CoreData context will execute
     func upsertUsers(users: [Network.User], in context: NSManagedObjectContext) throws
+
+    /// Insert of Update Network.UserDetail in CoreData
+    /// - Parameters:
+    ///   - userDetail: Network.UserDetail
+    ///   - context: The CoreData context will execute
     func upsertUserDetail(userDetail: Network.UserDetail, in context: NSManagedObjectContext) throws
+
+    /// Retreive  and Observe the list of User from the CoreData
+    /// - Parameter context: The CoreData context will execute
+    /// - Returns: AnyPublisher<[User]>
     func getUsers(in context: NSManagedObjectContext) -> AnyPublisher<[User], Never>
+
+    /// Retreive and Observe the user based on the username
+    /// - Parameters:
+    ///   - username: username of user
+    ///   - context: The CoreData context will execute
+    /// - Returns: AnyPublisher<User?>
     func getUserDetail(by username: String, in context: NSManagedObjectContext) -> AnyPublisher<User?, Never>
+
+    /// Get total of user in CoreData
+    /// - Parameter context: The CoreData context will execute
+    /// - Returns: Total of User
     func getUsersCount(in context: NSManagedObjectContext) throws -> Int
+
+    /// Clear all User data in CoreData
+    /// - Parameter context: The CoreData context will execute
+    func clearUsers(in context: NSManagedObjectContext) throws
 }
 
 struct DefaultUserDao: UserDao {
 
     struct Constant {
-        static let defaultFetchBatchSize = 25
+        static let defaultFetchBatchSize = 20
     }
 
     private let coreDatabase: CoreDatabase
@@ -104,6 +131,11 @@ struct DefaultUserDao: UserDao {
         return try context.performAndWait {
             try context.count(for: fetchRequest)
         }
+    }
+
+    func clearUsers(in context: NSManagedObjectContext) throws {
+        try User.delete(in: context)
+        try context.save()
     }
 }
 

@@ -1,0 +1,52 @@
+{
+  "configurations" : [
+    {
+      "id" : "F818EAF0-BF5F-46D8-8F8F-29E5DF8EC8CE",
+      "name" : "Configuration",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:GithubUser.xcodeproj",
+        "identifier" : "DC91C92C2D5CCE430036AC14",
+        "name" : "APINetworkTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:GithubUser.xcodeproj",
+        "identifier" : "DC91C8182D5CCB140036AC14",
+        "name" : "GithubUserTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "skippedTests" : [
+        "BaseTests"
+      ],
+      "target" : {
+        "containerPath" : "container:GithubUser.xcodeproj",
+        "identifier" : "DC91C9092D5CCCF10036AC14",
+        "name" : "DataTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:GithubUser.xcodeproj",
+        "identifier" : "DC91C8E52D5CCCB40036AC14",
+        "name" : "DomainTests"
+      }
+    }
+  ],
+  "version" : 1
+}
