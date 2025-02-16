@@ -7,6 +7,8 @@
 
 import Data
 
+
+/// URLSession configuration
 private enum HTTPClientConstant {
     static let memoryCapacity = 10 * 1024 * 1024  // 10 MB in memory
     static let diskCapacity = 50 * 1024 * 1024    // 50 MB on disk
@@ -16,6 +18,9 @@ private enum HTTPClientConstant {
     static let httpMaximumConnectionsPerHost = 5
 }
 
+
+
+/// Implement the HttpClientDependencies protocol
 final class DefaultHttpClientDependencies: HttpClientDependencies {
     private let baseEndpointProvider: BaseEndpointProvider
 
@@ -30,6 +35,8 @@ final class DefaultHttpClientDependencies: HttpClientDependencies {
         )
     }()
 
+
+    /// Setting URLSession for httpClient
     private lazy var urlSession: URLSession = {
         let urlSessionConfiguration = URLSessionConfiguration.default
         urlSessionConfiguration.urlCache = URLCache(
@@ -49,8 +56,9 @@ final class DefaultHttpClientDependencies: HttpClientDependencies {
     }()
 }
 
-public final class HttpClientDependenciesFactory {
-    public static func make() -> HttpClientDependencies {
-        DefaultHttpClientDependencies(baseEndpointProvider: DefaultBaseEndpointProvider())
+/// Factory pattern so that other modules can retrieve an instance of `HTTPClient`
+public struct HttpClientDependenciesFactory {
+    public static func make(baseEndpointProvider: BaseEndpointProvider) -> HttpClientDependencies {
+        DefaultHttpClientDependencies(baseEndpointProvider: baseEndpointProvider)
     }
 }

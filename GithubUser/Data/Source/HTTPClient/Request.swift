@@ -7,6 +7,8 @@
 
 internal import Spyable
 
+
+/// Base Request
 @Spyable(accessLevel: .public)
 public protocol Request {
     associatedtype ResponseModelType

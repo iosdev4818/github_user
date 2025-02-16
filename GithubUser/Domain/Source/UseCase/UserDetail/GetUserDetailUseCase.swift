@@ -10,6 +10,9 @@ internal import Spyable
 
 @Spyable(behindPreprocessorFlag: "DEBUG || TESTING", accessLevel: .public)
 public protocol GetUserDetailUseCase {
+    /// Get user information from repository
+    /// - Parameter username: username of user
+    /// - Returns: AnyPublisher<UserModel?>
     func invoke(username: String) -> AnyPublisher<UserModel?, Never>
 }
 

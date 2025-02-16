@@ -15,7 +15,8 @@ final class DIContainer {
     private init() {}
 
     lazy var dependencies: Dependencies = {
-        let httpClientDependencies = HttpClientDependenciesFactory.make()
+        let baseEndpointProvider = BaseEndpointProviderFactory.make()
+        let httpClientDependencies = HttpClientDependenciesFactory.make(baseEndpointProvider: baseEndpointProvider)
         let repositoryDependencies = RepositoryDependenciesFactory.make(httpClientDependencies: httpClientDependencies)
         let useCaseDependencies = UseCaseDependenciesFactory.make(repositoryDependencies: repositoryDependencies)
 

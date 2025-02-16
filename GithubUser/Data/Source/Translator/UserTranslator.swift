@@ -11,7 +11,14 @@ internal import Spyable
 
 @Spyable(behindPreprocessorFlag: "DEBUG || TESTING")
 protocol UserTranslator {
+    /// Convert `User` entity to `UserModel`
+    /// - Parameter user: `User` entity
+    /// - Returns: `UserModel`
     func invoke(user: User?) -> UserModel?
+
+    /// Convert list of `User` entity to list of `UserModel`
+    /// - Parameter users: List of `User` entity
+    /// - Returns: List of `UserModel`
     func invoke(users: [User]) -> [UserModel]
 }
 

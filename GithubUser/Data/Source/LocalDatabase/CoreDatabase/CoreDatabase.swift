@@ -7,13 +7,19 @@
 
 import CoreData
 
+/// Protocol that define the used properties and method that should be implemted
 protocol CoreDatabase {
+    /// Return the persistentContainer
     var persistentContainer: NSPersistentContainer { get }
+    /// Return the viewContext that is executed on the main queue
     var viewContext: NSManagedObjectContext { get }
+    /// Return the current background context that exist during the app life
     var currentBackgroundContext: NSManagedObjectContext { get }
+    /// Save the viewContext
     func saveContext()
 }
 
+/// Base CoreData, interact with Github.xcdatamodeld
 final class DefaultCoreDatabase: CoreDatabase {
     // MARK: - Properties
 

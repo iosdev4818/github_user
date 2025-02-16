@@ -6,6 +6,8 @@
 //
 
 extension Network {
+    
+    /// Raw User detail from API
     struct UserDetail: Decodable, Equatable {
         let id: Int
         let login: String
