@@ -27,6 +27,9 @@ struct UserDetailView: View {
             }
             .padding(.horizontal, 20)
         }
+        .refreshable {
+            viewModel.refresh()
+        }
         .onAppear {
             viewModel.startUpdating()
         }

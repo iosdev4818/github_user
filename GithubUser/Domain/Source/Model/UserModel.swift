@@ -22,4 +22,13 @@ public struct UserModel: Identifiable, Hashable {
         self.follower = follower
         self.following = following
     }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(username)
+        hasher.combine(avatarURL)
+        hasher.combine(htmlURL)
+        hasher.combine(location)
+        hasher.combine(follower)
+        hasher.combine(following)
+    }
 }

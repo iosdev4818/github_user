@@ -50,6 +50,10 @@ final class UserDetailViewModel: ObservableObject {
         getUserDetailPublisher = nil
     }
 
+    func refresh() {
+        fetchUserDetail()
+    }
+
     private func fetchUserDetail() {
         Task {
             do {

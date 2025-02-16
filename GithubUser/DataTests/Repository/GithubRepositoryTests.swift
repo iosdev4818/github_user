@@ -139,4 +139,21 @@ final class GithubRepositoryTests: CoreDatabaseBaseTest {
 
         #expect(actual == 10)
     }
+
+    @Test func testDeleteUsers() throws {
+        let userDao = UserDaoSpy()
+        userDao.clearUsersInClosure = { _ in
+            #expect(true)
+        }
+
+        let sut = DefaultGithubRepository(
+            githubRemoteDataSource: GithubRemoteDataSourceSpy(),
+            userDao: userDao,
+            dataBase: database,
+            userTranslator: UserTranslatorSpy()
+        )
+
+        try sut.deleteUsers()
+        #expect(userDao.clearUsersInCalled == true)
+    }
 }

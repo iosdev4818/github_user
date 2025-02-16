@@ -39,6 +39,10 @@ protocol UserDao {
     /// - Parameter context: The CoreData context will execute
     /// - Returns: Total of User
     func getUsersCount(in context: NSManagedObjectContext) throws -> Int
+
+    /// Clear all User data in CoreData
+    /// - Parameter context: The CoreData context will execute
+    func clearUsers(in context: NSManagedObjectContext) throws
 }
 
 struct DefaultUserDao: UserDao {
@@ -127,6 +131,11 @@ struct DefaultUserDao: UserDao {
         return try context.performAndWait {
             try context.count(for: fetchRequest)
         }
+    }
+
+    func clearUsers(in context: NSManagedObjectContext) throws {
+        try User.delete(in: context)
+        try context.save()
     }
 }
 

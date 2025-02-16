@@ -79,4 +79,9 @@ struct DefaultGithubRepository: GithubRepository {
             return 0
         }
     }
+
+    /// Delete all User in CoreData
+    func deleteUsers() throws {
+        try userDao.clearUsers(in: dataBase.currentBackgroundContext)
+    }
 }

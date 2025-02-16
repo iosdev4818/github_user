@@ -93,4 +93,24 @@ final class LoadUsersUseCaseTests: XCTestCase {
             XCTAssertEqual((error as! URLError).code, .timedOut)
         }
     }
+
+    func testInvalidate() async throws {
+        repository.deleteUsersClosure = {
+            XCTAssertTrue(true)
+        }
+        repository.loadUsersLimitOffsetClosure = { _, _ in
+        }
+        repository.getUsersCountClosure = {
+            0
+        }
+
+        try await sut.invoke(at: 0)
+        XCTAssertFalse(sut.shouldInvoke(at: 0))
+
+        try sut.invalidate()
+
+        XCTAssertTrue(repository.deleteUsersCalled)
+        // Verify queue can be perfom after invalidate
+        XCTAssertTrue(sut.shouldInvoke(at: 0))
+    }
 }

@@ -142,6 +142,32 @@ final class UserDaoTests: CoreDatabaseBaseTest {
 
         #expect(count == 2)
     }
+
+    // MARK: - clearUsers
+    @Test func testClearUserWithoutExsingUser() throws {
+        try sut.clearUsers(in: currentBackgroundContext)
+
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.sortDescriptors = User.sortDescriptors()
+        let actualUsers = (try? currentBackgroundContext.fetch(fetchRequest)) ?? []
+
+        #expect(actualUsers.isEmpty)
+    }
+
+    @Test func testClearUserWithExsingUser() throws {
+        try persistentContainer.saveContext(of: [
+            UserFixture.user1(in: viewContext),
+            UserFixture.user2(in: viewContext),
+        ])
+
+        try sut.clearUsers(in: currentBackgroundContext)
+
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.sortDescriptors = User.sortDescriptors()
+        let actualUsers = (try? currentBackgroundContext.fetch(fetchRequest)) ?? []
+
+        #expect(actualUsers.isEmpty)
+    }
 }
 
 private extension UserDaoTests {

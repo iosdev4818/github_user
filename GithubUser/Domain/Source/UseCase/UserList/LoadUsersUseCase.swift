@@ -17,6 +17,9 @@ public protocol LoadUsersUseCase {
     /// Interact with repository to load the remote user
     /// - Parameter index: index of current user
     func invoke(at index: Int) async throws
+
+    /// Clear all Queue and User data
+    func invalidate() throws
 }
 
 final class DefaultLoadUsersUseCase: LoadUsersUseCase {
@@ -49,5 +52,10 @@ final class DefaultLoadUsersUseCase: LoadUsersUseCase {
             usersQueue.remove(index)
             throw error
         }
+    }
+
+    func invalidate() throws {
+        usersQueue.removeAll()
+        try githubRepository.deleteUsers()
     }
 }

@@ -18,10 +18,14 @@ Get the list of GitHub users and view user details. The application employs the 
 - Open `GithubUser.xcodeproj`
 - Wait for SPM to resolve dependencies
 - Choose `GithubUser` app target. Build and run the application
+- For Unit Test, choose `Test navigation` -> run `TestPlan.xctestpan`
+![](/assets/UT_results.png)
 
 ## Application Features
 - ✅ Get User list
+- ✅ Pul to refresh User list
 - ✅ Get User detail
+- ✅ Pull to refresh User detail
 
 ## Implementation features
 - ✅ Dendency Injection
@@ -29,8 +33,7 @@ Get the list of GitHub users and view user details. The application employs the 
 - ✅ Pagination when loading a User list
 - ✅ Image caching
 - ✅ Local Caching with Core Data
-- ✅ Covering Unit Tests (`GithubUser` target -> choose `Test navigation` -> run `TestPlan.xctestpan`)
-![](/assets/UT_results.png)
+- ✅ Covering Unit Tests
 
 ## Dependencies
 - ✅ Use the [Spyable](https://github.com/Matejkob/swift-spyable) to automatically generate Spy files for Unit Testing

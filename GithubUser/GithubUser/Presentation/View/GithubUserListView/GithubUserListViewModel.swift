@@ -75,6 +75,17 @@ final class GithubUserListViewModel: ObservableObject {
             }
         }
     }
+
+    func refresh() {
+        Task {
+            do {
+                try loadUsers.invalidate()
+                loadUsersIfNeeded(at: 0)
+            } catch {
+                debugPrint("[GithubUserListViewModel] refresh error: \(error)")
+            }
+        }
+    }
 }
 
 // MARK: - User Action

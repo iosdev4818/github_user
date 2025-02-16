@@ -123,4 +123,20 @@ final class GithubUserListViewModelTests: XCTestCase {
         XCTAssertTrue(coordinator.navigateToDetailUsernameCalled)
     }
 
+    func testRefresh() async {
+        let invalidateExpectation = self.expectation(description: "invalidate")
+        loadUsers.invalidateClosure = {
+            invalidateExpectation.fulfill()
+        }
+        let shouldInvokeExpectation = self.expectation(description: "should invoke")
+        loadUsers.shouldInvokeAtClosure = { index in
+            XCTAssertEqual(index, 0)
+            shouldInvokeExpectation.fulfill()
+            return false
+        }
+
+        sut.refresh()
+
+        await fulfillment(of: [invalidateExpectation, shouldInvokeExpectation], timeout: 1.0)
+    }
 }
