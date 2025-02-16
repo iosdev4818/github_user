@@ -41,9 +41,9 @@ final class AppCoordinator: ObservableObject, GithubUserListCoordinator {
     func view(for route: AppRoute) -> some View {
         switch route {
         case .home:
-                GithubUserListViewFactory.make()
+            GithubUserListViewFactory.make(coordinator: self)
         case .detail(let username):
-                UserDetailViewFactory.make(username: username)
+            UserDetailViewFactory.make(username: username)
         }
     }
 }

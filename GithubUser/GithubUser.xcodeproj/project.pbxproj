@@ -21,6 +21,7 @@
 		DC91C93A2D5CCE430036AC14 /* APINetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC91C9242D5CCE430036AC14 /* APINetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DC91C9492D5CCF9F0036AC14 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DC91C9482D5CCF9F0036AC14 /* Spyable */; };
 		DC91C9822D5CE4BD0036AC14 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DC91C9812D5CE4BD0036AC14 /* Spyable */; };
+		DCCC30FE2D61E22500A5E3F5 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = DCCC30FC2D61E22500A5E3F5 /* TestPlan.xctestplan */; };
 		DCDE1F742D5F74C7000EDE23 /* Spyable in Frameworks */ = {isa = PBXBuildFile; productRef = DCDE1F732D5F74C7000EDE23 /* Spyable */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,7 @@
 		DC91C90A2D5CCCF10036AC14 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC91C9242D5CCE430036AC14 /* APINetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = APINetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC91C92D2D5CCE430036AC14 /* APINetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APINetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCCC30FC2D61E22500A5E3F5 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -345,6 +347,7 @@
 				DC91C9332D5CCE430036AC14 /* APINetworkTests */,
 				DC00AFC52D61991600EFB0F5 /* TestHostApp */,
 				DC91C8052D5CCB130036AC14 /* Products */,
+				DCCC30FD2D61E22500A5E3F5 /* TestPlan */,
 			);
 			sourceTree = "<group>";
 		};
@@ -363,6 +366,14 @@
 				DC00AFC42D61991600EFB0F5 /* TestHostApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DCCC30FD2D61E22500A5E3F5 /* TestPlan */ = {
+			isa = PBXGroup;
+			children = (
+				DCCC30FC2D61E22500A5E3F5 /* TestPlan.xctestplan */,
+			);
+			path = TestPlan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -737,6 +748,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCCC30FE2D61E22500A5E3F5 /* TestPlan.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

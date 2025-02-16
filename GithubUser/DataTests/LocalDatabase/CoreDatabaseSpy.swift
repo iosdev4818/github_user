@@ -48,15 +48,4 @@ final class CoreDatabaseSpy: CoreDatabase {
     func saveContext() {
         try! viewContext.save()
     }
-
-    func clearData() {
-        for entity in persistentContainer.managedObjectModel.entities {
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity.name!)
-            let fetchedResults = try! viewContext.fetch(fetchRequest) as! [NSManagedObject]
-            for fetchedResult in fetchedResults {
-                viewContext.delete(fetchedResult)
-            }
-        }
-        try! viewContext.save()
-    }
 }

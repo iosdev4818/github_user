@@ -7,6 +7,7 @@
 
 import XCTest
 import CoreData
+@testable import Data
 
 class BaseTests: XCTestCase {
     func dataWithName(_ name: String, ofType: String) -> Data? {
@@ -18,7 +19,7 @@ class BaseTests: XCTestCase {
 }
 
 class CoreDatabaseBaseTest {
-    var database: CoreDatabaseSpy!
+    var database: CoreDatabase!
 
     var persistentContainer: NSPersistentContainer {
         database.persistentContainer
@@ -34,10 +35,6 @@ class CoreDatabaseBaseTest {
 
     init() {
         database = CoreDatabaseSpy()
-    }
-
-    deinit {
-        database.clearData()
     }
 }
 

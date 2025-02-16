@@ -29,7 +29,7 @@ Get the list of GitHub users and view user details. The application employs the 
 - ✅ Pagination when loading a User list
 - ✅ Image caching
 - ✅ Local Caching with Core Data
-- ✅ Covering Unit Tests
+- ✅ Covering Unit Tests (`GithubUser` target -> choose `Test navigation` -> run `TestPlan.xctestpan`)
 ![](/assets/UT_results.png)
 
 ## Dependencies
